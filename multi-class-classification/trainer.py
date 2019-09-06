@@ -272,7 +272,7 @@ estimator = tf.estimator.Estimator(
 
 
 
-print(f'Beginning Training!')
+print('Beginning Training!')
 current_time = datetime.now()
 estimator.train(input_fn=train_input_fn, max_steps=num_train_steps)
 print("Training took time ", datetime.now() - current_time)
