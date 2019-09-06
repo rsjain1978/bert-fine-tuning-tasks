@@ -12,7 +12,7 @@ from bert import modeling
 
 from utils.input_to_example import create_examples
 from utils.file_based import file_based_convert_examples_to_features
-
+from utils.file_based import file_based_input_fn_builder
 
 ########################################################
 # MAx sequence length
@@ -277,7 +277,7 @@ current_time = datetime.now()
 estimator.train(input_fn=train_input_fn, max_steps=num_train_steps)
 print("Training took time ", datetime.now() - current_time)
 
-eval_file = os.path.join('.', "eval.tf_record")
+eval_file = os.path.join('./working', "eval.tf_record")
 #filename = Path(train_file)
 if not os.path.exists(eval_file):
     open(eval_file, 'w').close()
