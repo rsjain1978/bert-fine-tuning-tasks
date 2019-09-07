@@ -41,10 +41,12 @@ SENTENCE_A = 'comment_text'
 LABEL = ['toxic','severe_toxic','obscene','threat','insult','identity_hate']
 
 comments = pd.read_csv('./data/toxic-comments/train.csv')
-train_comments = comments.iloc[0:130000,:]
-dev_comments = comments.iloc[:-130000,:]
+train_comments = comments.iloc[0:800,:]
+dev_comments = comments.iloc[:-200,:]
 test_comments = pd.read_csv('./data/toxic-comments/test.csv')
 
+print ('Training data shape ',train_comments.shape)
+print ('Validation data shape ',train_comments.shape)
 ########################################################
 
 ########################################################
