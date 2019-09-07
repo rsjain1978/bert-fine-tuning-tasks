@@ -27,9 +27,9 @@ SAVE_CHECKPOINTS_STEPS = 1000
 SAVE_SUMMARY_STEPS = 500
 
 # BERT model location details
-BERT_VOCAB= '../../bert-model/multi_cased_L-12_H-768_A-12/vocab.txt'
-BERT_INIT_CHKPNT = '../../bert-model/multi_cased_L-12_H-768_A-12/bert_model.ckpt'
-BERT_CONFIG = '../../bert-model/multi_cased_L-12_H-768_A-12/bert_config.json'
+BERT_VOCAB= '../../multi_cased_L-12_H-768_A-12/vocab.txt'
+BERT_INIT_CHKPNT = '../../multi_cased_L-12_H-768_A-12/bert_model.ckpt'
+BERT_CONFIG = '../../multi_cased_L-12_H-768_A-12/bert_config.json'
 
 ########################################################
 
