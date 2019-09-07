@@ -42,7 +42,7 @@ LABEL = ['toxic','severe_toxic','obscene','threat','insult','identity_hate']
 
 comments = pd.read_csv('./data/toxic-comments/train.csv')
 train_comments = comments.iloc[0:800,:]
-dev_comments = comments.iloc[:-200,:]
+dev_comments = comments.iloc[800:1000,:]
 test_comments = pd.read_csv('./data/toxic-comments/test.csv')
 
 print ('Training data shape ',train_comments.shape)
@@ -274,10 +274,10 @@ estimator = tf.estimator.Estimator(
 
 
 
-print('Beginning Training!')
+print('****************************************Beginning Training!')
 current_time = datetime.now()
 estimator.train(input_fn=train_input_fn, max_steps=num_train_steps)
-print("Training took time ", datetime.now() - current_time)
+print("****************************************Training took time ", datetime.now() - current_time)
 
 eval_file = os.path.join('./working', "eval.tf_record")
 #filename = Path(train_file)
@@ -298,7 +298,10 @@ eval_input_fn = file_based_input_fn_builder(
     is_training=False,
     drop_remainder=False)
 
+print('****************************************Beginning Evaluation!')
+current_time = datetime.now()
 result = estimator.evaluate(input_fn=eval_input_fn, steps=eval_steps)
+print("****************************************Evaluation took time ", datetime.now() - current_time)
 
 
 output_eval_file = os.path.join(".", "eval_results.txt")
